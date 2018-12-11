@@ -1,0 +1,35 @@
+<gridlayout rows="*, auto" class="page page-content">
+  <StackLayout row="0" orientation="vertical">
+    <ScrollView orientation="vertical">
+      <StackLayout class="page-inner">
+        <GridLayout columns="*, auto, auto" rows="*"
+          class="table table-standings">
+          <Label text="Job Name" textWrap="true" row="0" col="0"
+            class="th team">
+          </Label>
+          <Label text="Distance" textWrap="true" row="0" col="1"
+            class="th Z">
+          </Label>
+        </GridLayout>
+        <RadListView [items]="contactName" backgroundColor="transparent"
+          height="500" selectionBehavior="Press"
+          (itemSelected)="onClicked()">
+          <ng-template let-item="item" let-i="index">
+            <GridLayout columns="*, auto, auto" rows="*"
+              class="table table-standings">
+              <Label text="{{item.address}}" textWrap="true" row="0"
+                col="0" class="td team">
+              </Label>
+              <Label text="{{item.distance}}" textWrap="true" row="0"
+                col="1" class="td Z">
+              </Label>
+            </GridLayout>
+          </ng-template>
+          <ListViewGridLayout tkListViewLayout itemHeight="34"
+            scrollDirection="Vertical" spanCount="1">
+          </ListViewGridLayout>
+        </RadListView>
+      </StackLayout>
+    </ScrollView>
+  </StackLayout>
+</GridLayout>
