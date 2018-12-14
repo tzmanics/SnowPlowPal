@@ -1,3 +1,18 @@
+<StackLayout height="210">
+  <GridLayout rows="*, auto" columns="*, *">
+    <StackLayout row="0" col="0" colspan="2" backgroundColor="#E0E0E0">
+      <DrawingPad #signature penColor="#000000" penWidth="5"></DrawingPad>
+    </StackLayout>
+    <StackLayout row="1" col="0">
+       <Button text="Reset" (tap)="reset()" class="btn btn-danger w-full">
+       </Button>
+    </StackLayout>
+    <StackLayout row="1" col="1">
+      <Button text="Submit" (tap)="send()" class="btn btn-primary w-full">
+      </Button>
+    </StackLayout>
+  </GridLayout>
+</StackLayout>
 <GridLayout rows="*, auto, auto">
   <ListView [items]="imageAssets">
     <ng-template let-image="item" let-i="index">

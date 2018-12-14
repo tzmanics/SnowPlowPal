@@ -65,3 +65,30 @@ export class FormComponent implements OnInit {
     })
   }
 }
+
+public ngAfterViewInit() {
+    this.pad = this.drawingPad.nativeElement;
+}
+
+public send() {
+    this.pad.getDrawing().then(data => {
+        let image = ImageSource.fromNativeSource(data);
+        let headers = new Headers({ "Content-Type": "application/json" });
+        let options = new RequestOptions({ headers: headers });
+        let body = {
+            "signature": image.toBase64String("png", 70)
+        };
+        this.http.post("http://example.com", JSON.stringify(body), options)
+            .subscribe(result => {
+                // Uploaded signature as a base64 string
+            }, error => {
+                console.dir(error);
+            });
+    }, error => {
+        console.dir(error);
+    });
+}
+
+public reset() {
+    this.pad.clearDrawing();
+}

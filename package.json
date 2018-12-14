@@ -24,6 +24,7 @@
     "kinvey-nativescript-sdk": "^3.12.3",
     "nativescript-angular": "~7.0.0",
     "nativescript-directions": "^1.3.0",
+    "nativescript-drawingpad": "^3.0.4",
     "nativescript-imagepicker": "^6.0.5",
     "nativescript-theme-core": "~1.0.4",
     "nativescript-ui-listview": "^5.0.0",
